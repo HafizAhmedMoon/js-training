@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript day 4</title>
+  </head>
+  <body>
+    Game over,
+    <button onclick="startGame()">Retry</button>
+    <script>
+      startGame();
+      function startGame() {
+        var randomNumber = Math.round(Math.random() * 10);
+
+        var guessNumber = Number(prompt("Guess a number between 1 to 10"));
+
+        var fail = 0;
+
+        while (guessNumber !== randomNumber) {
+          var hint;
+
+          if (guessNumber > randomNumber) {
+            hint = "Please guess a lower number";
+          } else {
+            hint = "Pease guess a higher number";
+          }
+
+          guessNumber = Number(
+            prompt(
+              "Incorrect! Guess another number between 1 to 10\nHint: " + hint
+            )
+          );
+          fail = fail + 1;
+
+          if (fail >= 2) {
+            break;
+          }
+        }
+        if (guessNumber === randomNumber) {
+          alert("You guess the correct number");
+        } else {
+          alert("Incorrect! you could not guess it right");
+        }
+      }
+    </script>
+  </body>
+</html>
