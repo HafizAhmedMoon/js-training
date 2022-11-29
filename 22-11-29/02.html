@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Day 5</title>
+  </head>
+  <body>
+    <script>
+      var name = "Ahmed";
+      var age = 21;
+      var hobbies = ["Cricket", "Soccer"];
+
+      var name2 = "Owais";
+      var age2 = 17;
+      var hobbies2 = ["Cricket"];
+
+      // better approach
+
+      var person = {
+        name: "Ahmed",
+        age: 21,
+        hobbies: ["Cricket", "Soccer"],
+      };
+
+      var person2 = {
+        name: "Owais",
+        age: 17,
+        hobbies: ["Hockey", "Soccer"],
+      };
+
+      // even more better
+
+      var persons = [
+        {
+          name: "Ahmed",
+          age: 21,
+          hobbies: ["Cricket", "Soccer"],
+        },
+        {
+          name: "Owais",
+          age: 17,
+          hobbies: ["Hockey", "Soccer"],
+        },
+        {
+          name: "Bilal",
+          age: 23,
+          hobbies: ["Hockey", "Soccer"],
+        },
+        {
+          name: "Hasan",
+          age: 24,
+          hobbies: ["Hockey", "Soccer"],
+        },
+      ];
+
+      console.log('count', persons.length)
+
+      for (var index = 0; index < persons.length; index = index + 1) {
+        console.log(index)
+        var person = persons[index];
+        console.log(person);
+      }
+
+      // Init: index = 0
+      // check index < 3 // true
+      // run block
+      // last: index = index + 1 // index 1
+      // check index < 3 // true
+      // run block
+      // last: index = index + 1 // 2
+      // check index < 3 // true
+      // run block
+      // last: index = index + 1 // 3
+      // check index < 3 // false
+      // end
+    </script>
+  </body>
+</html>
